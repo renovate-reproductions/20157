@@ -3,3 +3,4 @@
 
 # Desired Behavior
 - A PR should only be created for the root `fleet.yaml` file if a version is not specified under `targetCustomization[].helm.version` as the the behavior for Fleet is to take the defined default version defined at the higher level.
+- A PR should not be created for an item under `targetCustomization[]` if `targetCustomization[].helm.version` is not specified. This is because the PR that represents the change for the root level `helm.version` will be used for that `targetCustomization[]` entry.
