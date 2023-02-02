@@ -1,0 +1,25 @@
+defaultNamespace: kube-system
+name: cluster-autoscaler
+helm:
+  releaseName: rancher-cluster-autoscaler
+  chart: cluster-autoscaler
+  version: 9.23.0
+  repo: https://kubernetes.github.io/autoscaler
+  values:
+    foo: yay
+
+targetCustomizations:
+- name: a
+  clusterSelector:
+    matchLabels:
+      management.cattle.io/cluster-display-name: usw1-a
+  helm:
+    values:
+      foo: daz
+- name: b
+  clusterSelector:
+    matchLabels:
+      management.cattle.io/cluster-display-name: usw1-b
+  helm:
+    values:
+      foo: caz
