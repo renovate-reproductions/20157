@@ -3,7 +3,7 @@ name: cluster-autoscaler
 helm:
   releaseName: rancher-cluster-autoscaler
   chart: cluster-autoscaler
-  version: 9.20.0
+  version: 9.23.0
   repo: https://kubernetes.github.io/autoscaler
   values:
     foo: yay
